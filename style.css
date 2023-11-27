@@ -268,9 +268,12 @@ body{
         position: absolute;
         z-index: 999;
         width: 150px;
-        height: 655px;
+        height: 1095vh;
         /* display: none; */
       
+    }
+    .backdrop{
+        height: 1116vh;
     }
     .right-main-body{
         width: 100%;
@@ -286,7 +289,7 @@ body{
 
 }
 
-@media all and (max-width: 596px){
+@media all and (max-width: 630px){
     .right-nav{
         width: 100px;
         display: flex;
@@ -306,6 +309,13 @@ body{
     }
     .search-input{
         display: none;
+    }
+    .left-main-body{
+        height: 2360vh;
+
+    }
+    .backdrop{
+        height: 2380vh;
     }
     
 }
