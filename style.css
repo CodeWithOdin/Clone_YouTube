@@ -99,17 +99,20 @@ body{
 }
 
 .left-main-body{
-    /* background: green;   */
+    position: absolute;
+    z-index: 999;
+    background: wheat;  
     width: 12%;
-  
+    height: 426vh;
+    transform: translateX(1%);
+    transition: transform 0.3s ease-out;
 }
 .left-body-section{
     display: flex;
     flex-direction: column;
     border-bottom: 2px solid black;
-
-    /* position: sticky; */
 }
+
 .left-body-section a{
     display: flex;
     align-items: center;
@@ -146,6 +149,7 @@ body{
  /* -- - - - - -Main Body- - - - -  */
 .right-main-body{
     width: 88%;
+    z-index: 0;
 }
 .video-body{
     background: #f9f9f9;
@@ -229,16 +233,48 @@ body{
     font-weight: 400;
 }
 
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 443vh;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+}
+.backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index:1;
+}
+.left-main-body.active{
+    transform: translateX(-100%);
+    
+}
+.right-main-body.active{
+    width: 100%;
+    transition: width 0.3s ease-in;
+    position: absolute;
+
+}
+
 /* - - - - - -  Media Queries - - - - - - */
 @media all and (max-width: 895px){
 
     .left-main-body{
-        /* background: green;   */
-        display: none;
+        background: wheat;  
+        position: absolute;
+        z-index: 999;
+        width: 150px;
+        height: 655px;
+        /* display: none; */
       
     }
     .right-main-body{
         width: 100%;
+        
     }
     .mid-nav{
         padding: 1.1rem 0rem 1.1rem 5rem;
@@ -261,6 +297,7 @@ body{
     .right-nav .right-nav-item{
         display: none;
     }
+
     .right-nav .nav-user-icon {
         display: block;
     }
